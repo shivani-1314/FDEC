@@ -1,0 +1,37 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "iam:ListSAMLProviderTags",
+                "iam:ListMFADeviceTags"
+            ],
+            "Resource": [
+                "arn:aws:iam::853421233731:mfa/*",
+                "arn:aws:iam::853421233731:saml-provider/*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "iam:ListPolicies",
+                "iam:ListSAMLProviders",
+                "iam:ListCloudFrontPublicKeys",
+                "iam:ListServerCertificates",
+                "iam:ListRoles",
+                "iam:ListInstanceProfiles",
+                "iam:ListVirtualMFADevices",
+                "iam:ListOpenIDConnectProviders",
+                "iam:ListAccountAliases",
+                "iam:ListUsers",
+                "iam:ListGroups",
+                "iam:ListSTSRegionalEndpointsStatus",
+                "iam:GetAccountSummary"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

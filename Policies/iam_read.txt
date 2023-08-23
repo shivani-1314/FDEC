@@ -1,0 +1,38 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "iam:GetInstanceProfile",
+                "iam:GenerateOrganizationsAccessReport",
+                "iam:GetSAMLProvider"
+            ],
+            "Resource": [
+                "arn:aws:iam::853421233731:instance-profile/*",
+                "arn:aws:iam::853421233731:saml-provider/*",
+                "arn:aws:iam::853421233731:access-report/*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "iam:GetContextKeysForCustomPolicy",
+                "iam:GenerateCredentialReport",
+                "iam:GetAccountPasswordPolicy",
+                "iam:SimulateCustomPolicy",
+                "iam:GetAccountEmailAddress",
+                "iam:GetServiceLastAccessedDetailsWithEntities",
+                "iam:GetCloudFrontPublicKey",
+                "iam:GetAccountName",
+                "iam:GetCredentialReport",
+                "iam:GetServiceLastAccessedDetails",
+                "iam:GetAccountAuthorizationDetails",
+                "iam:GetOrganizationsAccessReport"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

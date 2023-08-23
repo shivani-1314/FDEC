@@ -1,0 +1,49 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:GetResourcePolicy",
+                "ec2:GetPasswordData",
+                "ec2:GetLaunchTemplateData",
+                "ec2:GetIpamResourceCidrs",
+                "ec2:GetManagedPrefixListEntries",
+                "ec2:GetIpamPoolCidrs",
+                "ec2:GetInstanceUefiData",
+                "ec2:GetManagedPrefixListAssociations",
+                "ec2:GetIpamDiscoveredResourceCidrs",
+                "ec2:GetConsoleScreenshot",
+                "ec2:GetIpamDiscoveredAccounts",
+                "ec2:GetConsoleOutput"
+            ],
+            "Resource": [
+                "arn:aws:ec2::853421233731:ipam-pool/*",
+                "arn:aws:ec2::853421233731:ipam-resource-discovery/*",
+                "arn:aws:ec2:*:853421233731:verified-access-group/*",
+                "arn:aws:ec2:*:853421233731:prefix-list/*",
+                "arn:aws:ec2:*:853421233731:instance/*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:GetDefaultCreditSpecification",
+                "ec2:GetSerialConsoleAccessStatus",
+                "ec2:GetAssociatedIpv6PoolCidrs",
+                "ec2:GetEbsEncryptionByDefault",
+                "ec2:GetSpotPlacementScores",
+                "ec2:GetHostReservationPurchasePreview",
+                "ec2:GetEbsDefaultKmsKeyId",
+                "ec2:GetNetworkInsightsAccessScopeAnalysisFindings",
+                "ec2:GetNetworkInsightsAccessScopeContent",
+                "ec2:GetSubnetCidrReservations",
+                "ec2:GetAwsNetworkPerformanceData",
+                "ec2:GetReservedInstancesExchangeQuote"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

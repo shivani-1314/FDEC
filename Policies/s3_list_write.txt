@@ -1,0 +1,41 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "s3:DeleteStorageLensConfiguration",
+                "s3:SubmitMultiRegionAccessPointRoutes",
+                "s3:CreateAccessPointForObjectLambda",
+                "s3:PutAccessPointConfigurationForObjectLambda",
+                "s3:UpdateJobPriority",
+                "s3:DeleteMultiRegionAccessPoint",
+                "s3:UpdateJobStatus",
+                "s3:CreateMultiRegionAccessPoint",
+                "s3:DeleteAccessPointForObjectLambda"
+            ],
+            "Resource": [
+                "arn:aws:s3::853421233731:accesspoint/*",
+                "arn:aws:s3:*:853421233731:storage-lens/*",
+                "arn:aws:s3-object-lambda:*:853421233731:accesspoint/*",
+                "arn:aws:s3:*:853421233731:job/*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "s3:ListStorageLensConfigurations",
+                "s3:ListAccessPointsForObjectLambda",
+                "s3:ListAllMyBuckets",
+                "s3:ListAccessPoints",
+                "s3:ListJobs",
+                "s3:PutStorageLensConfiguration",
+                "s3:ListMultiRegionAccessPoints",
+                "s3:CreateJob"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
