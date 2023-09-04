@@ -1,0 +1,19 @@
+﻿5.	To create AMI by template
+•	Launch instance.
+•	While launching instance allow http.
+•	Take ssh and install nginx I take an image of ubuntu so in that we have to run the command apt-get update;apt-get install nginx -y
+•	Then check the status of nginx run the command :- service nginx status
+•	Go to cd /var/www/html/ then ls  there is one dir available index.nginx-debian.html
+•	Then create a file vi index.html and write content in that dir.
+•	Then hit command curl localhost to check our content.
+•	Check in google just copy ur public ip and paste in google.
+•	Then we create image of this instance there are 3 way to create an image 
+1.	Go to the instance right click on the name of instance and click on image and templates and create image.
+2.	Select instance go to action click on image and templates and create image.
+3.	We can also create an image from snapshot go to EBS select snapshot click on instance go to action and click on create image from snapshot.
+•	Then we create an instance through this image 
+o	Go to image then click AMIs and click on launch instance from AMI.
+OR
+o	Go to launch instance and in application and AMIs select my AMIs and click on own by me and launch instance.
+
+

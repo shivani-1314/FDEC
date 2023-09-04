@@ -1,0 +1,11 @@
+7.	Host webpage using httpd.
+•	Launch an instance.
+•	Take ssh and hit the command yum install httpd.
+•	Check the version of httpd :- httpd –version
+•	So to see the configuration go to cd /etc/httpd/conf.
+•	Then go to cd var/www/html/ and create one file here vi index.html.
+•	Then check the status of systemctl :-systemctl status httpd
+•	Start  systemctl :-systemctl start httpd
+•	Then copy public ip and paste it in google to check our webpage.
+•	If there is an error to open the webpage so check if your firewall is start or stop if the firewall is start so stop the firewall :- systemctl firewalld.service
+•	And then refresh the page.

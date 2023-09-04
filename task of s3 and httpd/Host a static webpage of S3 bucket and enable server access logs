@@ -1,0 +1,7 @@
+6.	Host a static webpage of S3 bucket and enable server access logs.
+•	Create s3 bucket 
+•	Upload the file or folder of the webpage
+•	Make webpage publically accessible.
+•	Enable acl of object.
+•	Then in bucket go to properties and enable static website.
+•	And for server access log go to property of bucket and enable server access log.

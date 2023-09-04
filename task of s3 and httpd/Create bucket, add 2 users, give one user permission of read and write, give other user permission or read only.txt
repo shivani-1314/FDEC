@@ -1,0 +1,28 @@
+3.	Create bucket, add 2 users, give one user permission of read and write, give other user permission or read only.
+•	To create user go to iam and then choose user in navigation side.
+•	For 1 user: - specify user details.
+•	Set permission attach policy of s3 read and write, so create policy of s3 read and write
+•	Go to policy and copy this json file.
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "ListObjectsInBucket",
+            "Effect": "Allow",
+            "Action": ["s3:ListBucket"],
+            "Resource": ["arn:aws:s3:::bucket-name"]
+        },
+        {
+            "Sid": "AllObjectActions",
+            "Effect": "Allow",
+            "Action": "s3:*Object",
+            "Resource": ["arn:aws:s3:::bucket-name/*"]
+        }
+    ]
+•	}
+
+•	And give name to the policy and create policy.
+•	Give this s3_read_write policy to user and create user.
+•	For 2 user:- specify user details.
+•	Set permission attach policy of s3 read only permission to user.
+•	And create user.

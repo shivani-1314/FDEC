@@ -1,0 +1,16 @@
+2.	Create S3 bucket and cross region replication
+•	First, create 2 bucket 1st is main and 2nd is replication.
+•	Go to main bucket and upload an object.
+•	Then go to main bucket and click to management and create replication rule.
+•	For replication we have to enable versioning in both the buckets.
+•	In replication rule:- 
+	Add name
+	In source bucket click on apply to all object in the bucket
+	In destination chose a bucket in this account:-browse bucket where you want to replicate data.
+	In IAM role choose role and save.
+	After save he ask for replicate existing object or not.
+	Then submit
+	 Upload object to main bucket and see in replication bucket our data will replicate to that bucket.
+•	In replication version id also gets replicate.
+•	But it will not replicate delete marker.
+

@@ -1,0 +1,12 @@
+4.	Create S3 bucket and apply cross account replication
+•	Create s3 bucket 
+•	For replication versioning must be enabling.
+•	Then go to bucket and click to management and create replication rule.
+•	In replication rule:- 
+	Add name
+	In source bucket click on apply to all object in the bucket
+	In destination chose: - specify a bucket in another account. Then add account id of that account where you want to replicate and bucket name.
+	In IAM role choose role and save.
+	After save he ask for replicate existing object or not.
+	Then submit
+	 Upload object to main bucket and see in replication bucket our data will replicate to that account.
