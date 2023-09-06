@@ -1,0 +1,22 @@
+Mount aws s3 bucket on ec2
+
+.Create 1 instance with (default permission)
+1) Take ssh and install this 2 packages
+apt-get update -y
+apt-get install s3fs awscli -y
+
+.Then create s3 bucket with (default permissions)
+
+.Then go to IAM 
+.Go to user and add user add give him s3fullaccess permissions
+
+.After this go to terminal and add directory ex:- mkdir /test
+.Then create file for s3fs :- touch /etc/passwd-s3fs
+.Give this file 600 permission :- chmod 600 /etc/passwd-s3fs
+.Copy access key and secrete key of the user in this file
+.To generat access key and secrete key just go to user, click to user go to user's security credential and create keys
+.Then go to one file :-vim /etc/fuse.conf and remove # from user_allow_other
+.For permanent mounting we go to on file :-vim /etc/fstab and update this content :- s3fs#s3-mount-bucket1 /test     fuse    _netdev,allow_other 0 0
+.Then check the mounting point :- mount -a ,df -Th /test/
+.Then we cd to test and ls then we see our bucket object.
+.If we upload any object in our s3 bucket we can see that object in this /test/ file. 
