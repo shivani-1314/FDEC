@@ -1,0 +1,68 @@
+Log in to the AWS Console:
+
+Go to AWS Management Console.
+Sign in with your AWS account credentials.
+Navigate to the EC2 Dashboard:
+
+From the AWS Management Console, click on "Services" in the top left corner.
+Under the "Compute" section, select "EC2."
+Create the EC2 Instance:
+
+In the EC2 Dashboard, launch instance with default setting to which you want to attach the new EBS volume.
+Create a New EBS Volume:
+
+In the left navigation pane, under "Elastic Block Store," click on "Volumes."
+Click the "Create Volume" button.
+Configure the EBS Volume:
+In the "Create Volume" wizard, configure the following settings:
+-Volume Type: Choose the appropriate volume type (e.g., General Purpose SSD, Provisioned IOPS SSD, Magnetic).
+-Size (GiB): Specify the size of the volume in gibibytes (GiB).
+-Availability Zone: Choose the same availability zone as your EC2 instance.
+-(Optional) Configure Additional Settings:
+
+You can configure additional settings such as IOPS (for provisioned IOPS volumes) and tags as needed.
+Review and Create:
+
+Review the configuration settings to ensure they are correct.
+Click the "Create Volume" button to create the EBS volume.
+Attach the EBS Volume to the EC2 Instance:
+-Once the volume is created, go back to the "Volumes" screen in the EC2 Dashboard.
+-Select the newly created EBS volume.
+-In the "Actions" menu, click "Attach Volume."
+-Choose the EC2 instance to which you want to attach the volume.
+-Specify the device name (e.g., /dev/sdf) where the volume should be attached. 
+-Confirm and Attach:
+
+Review the attachment details and ensure they are correct.
+Go to the instance select instance ,in the "storage" we can check our volume is attach or not.
+
+SSH into the EC2 instance.
+Initialize and Mount the EBS Volume:
+
+If the EBS volume is not automatically recognized by the operating system, you may need to initialize and mount it. This typically involves using commands like 
+-fdisk -l -> to check partition and volumes.
+-fdisk /dev/xvda -> to partition.
+one help page will guide you for help click :-m
+to add new partition click :- n
+Partition type
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended (container for logical partitions)
+Select (default p): p
+Partition number (1-4, default 1):
+First sector (2048-16777215, default 2048):
+Last sector, +sectors or +size{K,M,G,T,P} (2048-16777215, default 16777215): +2gb
+-partprobe -> to inform kernal about partition.
+-blkid -> to check allocated file system
+For permanant mounting we have to configure one file -> vim /etc/fstab
+Add this in file-> /dev/xvda1 /mnt xfs defaults 0 0 "save :wq!"
+-mount -a  -> for mounting 
+-lsblk -> NAME    MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0   8G  0 disk
+└─xvda1 202:1    0   8G  0 part /mnt
+xvdf    202:80   0   8G  0 disk
+
+Once you've completed these steps, the new EBS volume should be attached and accessible from your EC2 instance, and you can use it for storing data or as needed for your specific use case.
+
+
+
+
